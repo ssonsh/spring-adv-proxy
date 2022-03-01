@@ -1,19 +1,20 @@
-package com.example.proxy.pureproxy.concreteproxy.code;
+package com.example.proxy.pureproxy.interfaceproxy.code;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class TimeProxy extends ConcreteLogic{
+public class TimeProxy implements Logic{
 
-    private ConcreteLogic target;
+    private final Logic target;
 
-    public TimeProxy(ConcreteLogic target){
+    public TimeProxy(Logic target){
         this.target = target;
     }
 
-    // 구체 클래스의 핵심 비즈니스 로직을 수행하는 메소드를 Override 한다.
     @Override
-    public String operation(){
+    public String operation() {
+
+
         log.info("TimeDecorator 실행");
         long startTime = System.currentTimeMillis();
 
