@@ -6,7 +6,7 @@ plugins {
 
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '1.8'
+sourceCompatibility = "1.9"
 
 configurations {
     compileOnly {
@@ -26,8 +26,12 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testCompileOnly 'org.projectlombok:lombok'
     testAnnotationProcessor 'org.projectlombok:lombok'
+
+    // spring aop
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
 }
 
 test {
     useJUnitPlatform()
 }
+targetCompatibility = JavaVersion.VERSION_1_9
